@@ -1,16 +1,21 @@
 package pj.corporation;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Cliente {
 
+    @Id
+    private long id;
     private String cpf;
     private String nome;
-
     public Cliente(String cpf, String nome) {
         this.cpf = cpf;
         this.nome = nome;
+    }
+    public Cliente(){
+        
     }
 
     public String getCpf() {
