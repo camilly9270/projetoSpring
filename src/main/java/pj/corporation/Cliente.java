@@ -2,29 +2,40 @@ package pj.corporation;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 
 @Entity
 public class Cliente {
-
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
-    private long id;
-    private String cpf;
+    private Long id;
     private String nome;
-    public Cliente(String cpf, String nome) {
-        this.cpf = cpf;
-        this.nome = nome;
+
+    private String endereco;
+
+    public Long getId() {
+        return id;
     }
+
+
     public Cliente(){
-        
+
+    }
+    public String getEndereco() {
+        return endereco;
     }
 
-    public String getCpf() {
-        return cpf;
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public Cliente(String endereco, String nome) {
+        this.id = id;
+        this.nome = nome;
+        this.endereco = endereco;
     }
+
 
     public String getNome() {
         return nome;
